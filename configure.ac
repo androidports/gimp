@@ -1015,7 +1015,10 @@ if test "x$os_win32" != xyes; then
   AC_MSG_CHECKING([fd_set and sys/select])
   AC_COMPILE_IFELSE(
     [AC_LANG_PROGRAM(
-      [[#include <sys/types.h>]],
+      [[#include <sys/types.h>
+#ifdef ANDROID
+#include <sys/select.h>
+#endif]],
       [[fd_set readMask, writeMask;]])],
     [gimp_ok=yes],
     [gimp_ok=no])
