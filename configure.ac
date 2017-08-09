@@ -1197,6 +1197,8 @@ if test "x$with_libjpeg" != xno && test -z "$JPEG_LIBS"; then
   AC_MSG_ERROR([
 *** Checks for JPEG library failed. You can build without it by passing
 *** --without-libjpeg to configure but you won't be able to use JPEGs then.])
+else
+  jpeg_ok=yes
 fi
 
 if test "x$jpeg_ok" = xyes; then
